@@ -1,9 +1,16 @@
 new Vue({
     el: '#app',
-    data: {},
+    data: {
+        textInput: '',
+    },
     methods: {
         onInputChange(e) {
-            console.log(e.target.value);
+            this.textInput = e.target.value;
+        },
+    },
+    computed: {
+        identicon() {
+            return jdenticon.toSvg(this.textInput, 200);
         },
     },
 });
